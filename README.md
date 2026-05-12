@@ -38,7 +38,18 @@ Manage project vision and requirements via [Canonic](https://github.com/Canonica
 
 ## Install
 
-Copy `canonic.md` to agent skills folder (e.g., `.claude/skills/`).
+### Gemini CLI:
+```bash
+gemini extensions install Canonical-AI/canonic-skill
+```
+
+### Claude Code:
+```bash
+npx skills add Canonical-AI/canonic-skill --local
+```
+
+### Other:
+See [INSTALL.md](./INSTALL.md) for more options.
 
 ## Requirements
 

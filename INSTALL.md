@@ -11,34 +11,53 @@ Install the Canonic skill to enable human-led design workflows with your AI agen
 
 ---
 
-## 1. Quick Install (Claude Code)
+## 1. Quick Install (Gemini CLI)
 
-If you use Claude Code, copy the skill to your project's local skills folder:
+The easiest way to install for Gemini CLI is via the extension command:
+
+```bash
+gemini extensions install Canonical-AI/canonic-skill
+```
+
+Or, to add it as a standalone skill:
+
+```bash
+npx skills add Canonical-AI/canonic-skill
+```
+
+## 2. Quick Install (Claude Code)
+
+Install as a project-local skill:
+
+```bash
+npx skills add Canonical-AI/canonic-skill --local
+```
+
+*(This automatically creates `.claude/skills/canonic.md` for you)*
+
+---
+
+## 3. Manual Install
+
+If you prefer manual setup:
 
 ```bash
 mkdir -p .claude/skills
 curl -o .claude/skills/canonic.md https://raw.githubusercontent.com/Canonical-AI/canonic-skill/main/canonic.md
 ```
 
-## 2. Quick Install (Gemini CLI)
+---
 
-Add the skill to your Gemini CLI environment:
+## Verification
 
-```bash
-# Option A: Local skill
-cp canonic.md ./SKILL.md
+Once installed, verify the connection:
 
-# Option B: Global extension
-# Follow gemini-cli documentation for adding custom skills to your extensions folder.
-```
-
-## 3. Manual Install (Other Agents)
-
-For agents without a native skill system:
-
-1.  Copy the content of `canonic.md`.
-2.  Provide it to your agent as a **System Prompt** or **Instruction File**.
-3.  The agent will now understand the `/canonic` command protocol.
+1.  Open Canonic.
+2.  In your agent, run:
+    ```bash
+    /canonic init
+    ```
+3.  If the agent prompts you for a workspace path and opens Canonic, installation was successful.
 
 ---
 
