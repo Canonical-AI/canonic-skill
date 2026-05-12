@@ -1,0 +1,6 @@
+{
+  "name": "canonic-skill",
+  "description": "Manage project vision and requirements via Canonic. Human-led design, AI-led implementation.",
+  "version": "1.0.0",
+  "contextFileName": "GEMINI.md"
+}

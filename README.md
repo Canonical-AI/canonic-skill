@@ -1,41 +1,49 @@
 # canonic-skill
 
-A [Claude Code](https://claude.ai/code) skill that lets AI agents open documents in [Canonic](https://github.com/Canonical-AI/canonic) for human review, then continue with the edited content and a chosen next step.
+Manage project vision and requirements via [Canonic](https://github.com/Canonical-AI/canonic). Human-led design, AI-led implementation.
 
-## What it does
+## Features
 
+- **`init`**: Bootstrap project. Check Canonic, set workspace, create `vision.md`.
+- **Handoff**: Edit in Canonic → agent waits → agent resumes with chosen action.
+- **Markdown is Gospel**: Requirements in markdown are absolute truth. AI must follow.
+- **Anti-Pattern Guard**: AI modifying docs is discouraged. Prefer human-in-the-loop via Canonic.
+
+## Usage
+
+### 1. Initialize Project
+```bash
+/canonic init
 ```
-Agent writes a spec → opens it in Canonic → you edit and annotate → 
-click "Implement this" → agent picks up with your reviewed version
-```
+- Checks Canonic install.
+- Asks for workspace path (outside code repo recommended).
+- Synthesizes `vision.md` from context or user input.
+- Opens in Canonic for review.
 
-The agent:
-- Auto-launches Canonic if it's not running
-- Opens your workspace and the file
-- Optionally leaves inline comments while you read
-- Waits for you to choose a next action ("Implement this", "Research this", etc.)
-- Resumes with the full edited content
+### 2. Review & Handoff
+```bash
+/canonic review path/to/doc.md
+```
+- Opens doc in Canonic.
+- Agent waits.
+- User edits → clicks "Implement this" (or other action).
+- Agent resumes with updated content.
+
+## Philosophy
+
+- **Human Design**: Use Canonic to define *what* to build.
+- **AI Implement**: Agent reads reviewed markdown as source of truth (Gospel).
+- **No Desync**: If requirements change in Canonic, agent updates internal state.
+- **Anti-Pattern**: AI editing docs = bad. Human review = good.
 
 ## Install
 
-Copy `canonic.md` into your project's `.claude/skills/` directory:
-
-```bash
-mkdir -p .claude/skills
-curl -o .claude/skills/canonic.md \
-  https://raw.githubusercontent.com/Canonical-AI/canonic-skill/main/canonic.md
-```
-
-Then use it in Claude Code:
-
-```
-/canonic path/to/your-doc.md
-```
+Copy `canonic.md` to agent skills folder (e.g., `.claude/skills/`).
 
 ## Requirements
 
-- [Canonic](https://github.com/Canonical-AI/canonic) installed at `/Applications/Canonic.app` (macOS)
-- Claude Code
+- [Canonic](https://github.com/Canonical-AI/canonic) (macOS, Windows, or Linux).
+- Agent with shell + HTTP capability.
 
 ## How it works
 

@@ -1,0 +1,9 @@
+{
+  "name": "canonic",
+  "description": "Human-led design via Canonic. AI-led implementation.",
+  "icon": "📝",
+  "capabilities": [
+    "shell",
+    "http"
+  ]
+}
