@@ -33,7 +33,7 @@ Install as a project-local skill:
 npx skills add Canonical-AI/canonic-skill --local
 ```
 
-*(This automatically creates `.claude/skills/canonic.md` for you)*
+*(This automatically creates `.claude/skills/SKILL.md` for you)*
 
 ---
 
@@ -43,7 +43,7 @@ If you prefer manual setup:
 
 ```bash
 mkdir -p .claude/skills
-curl -o .claude/skills/canonic.md https://raw.githubusercontent.com/Canonical-AI/canonic-skill/main/canonic.md
+curl -o .claude/skills/SKILL.md https://raw.githubusercontent.com/Canonical-AI/canonic-skill/main/SKILL.md
 ```
 
 ---

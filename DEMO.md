@@ -75,7 +75,7 @@ rm -rf ~/Documents/CanonicWorkspaces/demo-project
 rm ~/.canonic/api.lock
 
 # 4. (Optional) Remove the skill from your agent
-# rm .claude/skills/canonic.md
+# rm .claude/skills/SKILL.md
 ```
 
 ---

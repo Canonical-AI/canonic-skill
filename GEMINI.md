@@ -15,8 +15,8 @@ This project provides an **AI Agent skill** (compatible with Gemini, Claude Code
     6. Canonic POSTs edited content and a "next step" prompt back to the agent's callback listener.
     7. Agent updates the local file and continues.
 
-## Project Structure
-- `canonic.md`: The core skill definition. Contains the logic for lockfile discovery, Canonic launching, and API interaction. Uses generic placeholders for agent identification.
+- **Universal Skill Definition:** Defined in `SKILL.md`.
+- `SKILL.md`: The core skill definition. Contains the logic for lockfile discovery, Canonic launching, and API interaction. Uses generic placeholders for agent identification.
 - `README.md`: General documentation on installation and usage across different agents.
 
 ## Development Conventions
@@ -26,7 +26,8 @@ This project provides an **AI Agent skill** (compatible with Gemini, Claude Code
 
 ## Usage & Installation
 To install the skill:
-1. Copy `canonic.md` to the appropriate skills directory for your agent (e.g., `.claude/skills/` for Claude, or a custom skill path for Gemini).
+1. Copy `SKILL.md` to the appropriate skills directory for your agent (e.g., `.claude/skills/` for Claude, or a custom skill path for Gemini).
+
 2. For agents without a native skill system, provide the file content as context.
 3. Invoke via the agent's command interface: `/canonic <path-to-file>`.
 
