@@ -40,7 +40,7 @@ Manage project vision and requirements via [Canonic](https://github.com/Canonica
 
 ### Gemini CLI:
 ```bash
-gemini extensions install Canonical-AI/canonic-skill --auto-update
+gemini extensions install https://github.com/Canonical-AI/canonic-skill --auto-update
 ```
 
 ### Claude Code:

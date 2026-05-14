@@ -16,7 +16,7 @@ Install the Canonic skill to enable human-led design workflows with your AI agen
 The easiest way to install for Gemini CLI is via the extension command:
 
 ```bash
-gemini extensions install Canonical-AI/canonic-skill
+gemini extensions install https://github.com/Canonical-AI/canonic-skill --auto-update
 ```
 
 Or, to add it as a standalone skill:
