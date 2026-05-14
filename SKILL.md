@@ -6,12 +6,12 @@ description: Manage project vision and requirements via Canonic. Use `init` to b
 ## Commands
 
 ### `canonic init`
-Bootstrap a new project vision or requirement doc.
-1. Check Canonic installation (see Step 2).
-2. Ask user for workspace location (default: `~/Documents/CanonicWorkspaces/<project-name>`).
-3. If no existing context, ask "What are you trying to build?".
-4. Create `vision.md` with a comprehensive project starter/vision based on context/input.
-5. Open `vision.md` in Canonic for human review (Step 5).
+Bootstrap or connect to a project vision/requirement doc.
+1. Check Canonic installation (see Step 1).
+2. Ask user for workspace location.
+3. **Check for existing docs:** If the directory has `.md` files, list them and ask: "I found existing docs. Should I open one of these, or create a new 'vision.md' from context?".
+4. If creating new: synthesize `vision.md` based on context/input.
+5. Open the selected/created file in Canonic (Step 3).
 
 ### `canonic review <file-path>`
 Open existing file for review and handoff.
@@ -44,10 +44,12 @@ If installed but not running: launch and wait for `~/.canonic/api.lock` (or `%US
 - Windows: `start canonic`
 
 ### Step 2 — Workspace Setup (`init` only)
-1. Prompt user for workspace path. **Warning:** Do not default to current working directory if it's a code repo; keep docs separate to avoid noise.
-2. Create directory.
-3. If context exists (READMEs, code, previous chat): synthesize `vision.md`.
-4. If no context: ask user goal → synthesize `vision.md`.
+1. Prompt user for workspace path.
+2. Check for existing `.md` files in the directory.
+3. If files exist: list them and ask user to select one (or create new).
+4. If directory empty or user chooses "new": 
+    - If context exists (READMEs, code, previous chat): synthesize `vision.md`.
+    - If no context: ask user goal → synthesize `vision.md`.
 
 ### Step 3 — Callback & Handoff
 (Follow original Steps 4-7 for HTTP listener and `/session/start`).
